@@ -11,7 +11,6 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        {/* Route par défaut */}
         <Route path="/" element={<Home />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/matchmaking" element={<Matchmaking />} />
