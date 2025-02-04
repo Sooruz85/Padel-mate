@@ -1,4 +1,30 @@
-/* Navbar.css */
+/* Ajout d'un background image qui recouvre toute la page avec un assombrissement sur les contours */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  background: url('/src/assets/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0.8) 100%);
+  z-index: -1;
+}
 
 .navbar-transparent {
   background: transparent !important;
