@@ -1,6 +1,7 @@
 import React from "react";
 import "./Home.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { SignIn, SignUp } from "@clerk/clerk-react";
 
 const Home = () => {
   return (
@@ -10,22 +11,17 @@ const Home = () => {
         <h1>Bienvenue sur Padel Reservation</h1>
         <p>Réservez facilement un terrain de padel et trouvez des partenaires de jeu.</p>
         <div className="auth-forms">
-          {/* Formulaire de connexion */}
-          <form className="sign-in">
+          {/* Formulaire de connexion avec Clerk */}
+          <div className="sign-in">
             <h2>Se connecter</h2>
-            <input type="email" placeholder="Email" required />
-            <input type="password" placeholder="Mot de passe" required />
-            <button type="submit">Connexion</button>
-          </form>
+            <SignIn />
+          </div>
 
-          {/* Formulaire d'inscription */}
-          <form className="sign-up">
+          {/* Formulaire d'inscription avec Clerk */}
+          <div className="sign-up">
             <h2>S'inscrire</h2>
-            <input type="text" placeholder="Nom" required />
-            <input type="email" placeholder="Email" required />
-            <input type="password" placeholder="Mot de passe" required />
-            <button type="submit">Inscription</button>
-          </form>
+            <SignUp />
+          </div>
         </div>
       </main>
     </div>
@@ -33,3 +29,4 @@ const Home = () => {
 };
 
 export default Home;
+
